@@ -1,0 +1,28 @@
+.items {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  color: rgb(1, 1, 39);
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: 3px solid rgb(0, 4, 240);
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  color: rgb(150, 148, 148);
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+#buttn {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+h4 {
+  color: rgb(0, 4, 240);
+}

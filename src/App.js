@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Switch, Redirect } from "react-router-dom";
+import Auth from "./pages/Auth";
+import Events from "./pages/Events";
+import Bookings from "./pages/Bookings";
+import Header from "./components/Header";
+import { GetTokenContext } from "./StateManagement/TokenProvider";
 
 function App() {
+  const [{ token }, dispatch] = GetTokenContext();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/auth" />
+        </Route>
+        <Route path="/auth">
+          {token ? <Redirect to="/events" /> : <Auth />}
+        </Route>
+        <Route path="/events">
+          <Events />
+        </Route>
+        <Route path="/Bookings">
+          {!token ? <Redirect to="/auth" /> : <Bookings />}
+        </Route>
+      </Switch>
+    </>
   );
 }
 
