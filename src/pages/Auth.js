@@ -41,7 +41,7 @@ function Auth() {
           }`,
       };
     }
-    fetch("http://localhost:4000/graphql", {
+    fetch("https://graphql-backend-api.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(reqbody),
       headers: {

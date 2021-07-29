@@ -28,7 +28,7 @@ function Bookings() {
       return;
     }
     setisLoading(true);
-    fetch("http://localhost:4000/graphql", {
+    fetch("https://graphql-backend-api.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(reqbookings),
       headers: {
@@ -70,7 +70,7 @@ function Bookings() {
     };
 
     setisLoading(true);
-    fetch("http://localhost:4000/graphql", {
+    fetch("https://graphql-backend-api.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(reqcancels),
       headers: {

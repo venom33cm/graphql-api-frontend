@@ -34,7 +34,7 @@ function Events() {
 
   const eventcall = () => {
     setisLoading(true);
-    fetch("http://localhost:4000/graphql", {
+    fetch("https://graphql-backend-api.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(reqevents),
       headers: {
@@ -113,7 +113,7 @@ function Events() {
     };
 
     setisLoading(true);
-    fetch("http://localhost:4000/graphql", {
+    fetch("https://graphql-backend-api.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(reqbody),
       headers: {
@@ -177,7 +177,7 @@ function Events() {
         }`,
     };
 
-    fetch("http://localhost:4000/graphql", {
+    fetch("https://graphql-backend-api.herokuapp.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
